@@ -4,7 +4,6 @@ import com.microsoft.playwright.*;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
-import java.util.List;
 
 import static support.CaseKaroConstants.*;
 
@@ -98,6 +97,7 @@ public class CaseKaroSteps {
     public void printThePriceOfAllItemsWithDetails() {
         int itemCount = page.locator(CartItemCount).count();
 
+
         for (int i = 0; i < itemCount; i++) {
             String material = page.locator(Material).nth(i).innerText();
             String price = page.locator(Price).nth(i).innerText();
@@ -109,5 +109,7 @@ public class CaseKaroSteps {
             System.out.println("Link: " + "https://casekaro.com" + link);
             System.out.println("-----------------------------");
         }
+
     }
+
 }
